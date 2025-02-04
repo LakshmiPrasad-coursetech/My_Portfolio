@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakshmi Prasad - Full-Stack Developer & AI Enthusiast</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(to right, #00416A, #E4E5E6);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        header .cta-button {
+            background-color: #FF6600;
+            color: white;
+            padding: 14px 25px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+        header .cta-button:hover {
+            background-color: #e65c00;
+        }
+        section {
+            padding: 80px 20px;
+            background-color: #fff;
+            margin-top: 30px;
+        }
+        section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #00416A;
+        }
+        .about-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+        .about-section img {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+        @media (max-width: 768px) {
+    .about-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about-section img {
+        margin-bottom: 30px; /* Add space between the image and text */
+    }
+}
+        .about-section div {
+            max-width: 650px;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 25px;
+            justify-items: center;
+            
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 25px;
+            justify-items: center;
+            max-width: 1000px;
+            
+        }
+        
+        .portfolio-item {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            max-width: 500px;
+            
+        }
+        
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+        .portfolio-item:hover img {
+            opacity: 0.8;
+        }
+        .portfolio-item h4 {
+            margin: 15px 0;
+            font-size: 1.3rem;
+        }
+        .portfolio-item p {
+            font-size: 1rem;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-content {
+    padding: 15px;
+}
+
+
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+            
+        }
+        .skills-list .skill {
+            background-color: #FF6600;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            
+        }
+        .skills-list .skill:hover {
+            background-color: #e65c00;
+        }
+
+        #other-links {
+    background: linear-gradient(145deg, #FF6600, #FF8C33);
+    padding: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#other-links:before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: move 6s ease-in-out infinite;
+}
+
+@keyframes move {
+    0% {
+        top: -20px;
+        left: -100%;
+    }
+    50% {
+        top: 100%;
+        left: 100%;
+    }
+    100% {
+        top: -20px;
+        left: -100%;
+    }
+}
+
+#other-links h2 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+}
+
+/* Flexbox styling for links */
+#other-links ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; /* Makes items responsive */
+    justify-content: center;
+    gap: 20px;
+    max-width: 800px;
+}
+
+#other-links li {
+    flex: 1 1 auto; /* Ensures flexibility */
+    text-align: center;
+}
+
+#other-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 12px 25px;
+    border-radius: 50px;
+    border: 2px solid white;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+#other-links a:hover {
+    background-color: white;
+    color: #FF6600;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#other-links a:focus {
+    outline: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #other-links ul {
+        flex-direction: column; /* Stack items vertically */
+        gap: 15px;
+    }
+
+    #other-links a {
+        font-size: 1.1rem;
+        padding: 12px 25px;
+        width: 80%; /* Ensures buttons have a consistent width */
+        display: inline-block;
+    }
+}
+
+@media (max-width: 480px) {
+    #other-links a {
+        width: 100%; /* Full width on smaller screens */
+        padding: 14px 20px;
+    }
+}
+
+        .contact-form {
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            padding: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact-section {
+    background: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-content h2 {
+    color: #00416A;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.contact-content hr {
+    width: 80px;
+    height: 3px;
+    background: #FF6600;
+    border: none;
+    margin: 10px auto;
+}
+
+.contact-details p {
+    font-size: 1.1rem;
+    color: #333;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-details i {
+    font-size: 1.5rem;
+    color: #d32f2f;
+}
+
+        
+        footer {
+            background-color: #00416A;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        footer p {
+            font-size: 1rem;
+        }
+        footer a {
+            color: #FF6600;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Lakshmi Prasad</h1>
+    <p>Software Developer | AI Enthusiast | Content Creator</p>
+    <a href="https://www.linkedin.com/in/lakshmi-prasad-dinesh-b5b12b189/" class="cta-button">LinkedIn Profile</a>
+</header>
+
+<section>
+    <h2>About Me</h2>
+    <div class="about-section">
+        <img src="./images/PXL_20240626_151656704~2.jpg" alt="Lakshmi Prasad">
+        <div>
+            <p>"Hi, I'm Lakshmi Prasad, a full-stack developer and AI enthusiast with 2+ years of experience in building scalable applications, microservices, and web solutions using Node.js, Express, React.js, and Spring Boot. I specialize in API development, database management, and deploying cloud solutions on AWS. 
+                I'm also proficient in Data Structures and Algorithms. Alongside development, I create AI-focused content on my YouTube channel, helping others explore AI concepts. My goal is to blend my software development skills with my passion for AI to create impactful solutions."</p>
+        </div>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+        <div class="skill">Full-Stack Web Development</div>
+        <div class="skill">API Development and Integration</div>
+        <div class="skill">Microservices and Scalable Solutions</div>
+        <div class="skill">Analysis and problem solving(DSA)</div>
+        <div class="skill">Team Collaboration and Agile Methodologies</div>
+        <div class="skill">Microservices and Scalable Solutions</div>
+        <!-- Add more skills here as needed -->
+    </div>
+</section>
+
+<section>
+    <h2>Tools & Technologies</h2>
+    <div class="portfolio-grid">
+        <div class="portfolio-item">
+            <img src="./images/jsnew.png" alt="JavaScript">
+            <p>For scalable network applications</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="./images/java.png" alt="Java">
+            <p>For building enterprise applications.</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="./images/nodejs.png" alt="Node.js">
+            <p>JavaScript runtime environment.</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="./images/spring.png" alt="Spring">
+           <p>Framework Java applications.</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="./images/express.png" alt="JavaScript">
+            <p>Framework for JavaScript</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="./images/restapi.jpg" alt="Java">
+            <p>Request and Response cycle</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="./images/postgresql.png" alt="Node.js">
+            <h5>9/10</h5>
+            <p>Relational database management.</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="./images/Mongodb.png" alt="Spring">
+            <h5>9/10</h5>
+            <p>noSql database</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="./images/mysql.png" alt="JavaScript">
+            <h5>9/10</h5>
+            <p>Oracle database management.</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="./images/docker.png" alt="Java">
+            <h5>9/10</h5>
+            <p>Image conatiners.</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="./images/jenkins_image.png" alt="Node.js">
+            <h5>9/10</h5>
+            <p>Build, Test and Deploy</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="./images/aws-logo.jpg" alt="Spring">
+            <h5>9/10</h5>
+            <p>A cloud system service.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Projects</h2>
+    <div class="project-grid">
+        <div class="portfolio-item">
+            <img src="./images/feastf.png" alt="FeastFinder">
+            <h4>FeastFinder</h4>
+            <p>A review and restaurant discovery application for food lovers.</p>
+            <a href="https://feastfinder.onrender.com/" class="btn">Visit Project</a>
+        </div>
+        <div class="portfolio-item">
+            <img src="./images/century.png" alt="Century Fitness">
+            <h4>Century Fitness</h4>
+            <p>Gym management application for tracking memberships and schedules.</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="./images/blueline.png" alt="Century Fitness">
+            <h4>ReachBlueline</h4>
+            <p>A marketing-recruitment managemnt application.</p>
+            <a href="https://reachblueline.com/" class="btn">Visit Project</a>
+        </div>
+
+    </div>
+</section>
+
+<section id="other-links">
+    <h2>Other Links</h2>
+    <ul>
+      <li><a href="https://github.com/LakshmiPrasad-coursetech" target="_blank">GitHub</a></li>
+      <li><a href="http://www.youtube.com/@nth_Byte" target="_blank">YouTube</a></li>
+      <li><a href="./certificates.html" target="_blank">Certifications</a></li>
+      <li><a href="https://medium.com/@lakshmiprasadgre1" target="_blank">Medium</a></li>
+    </ul>
+  </section>
+  
+
+  <section class="contact-section">
+    <div class="contact-form">
+        <div class="contact-content">
+            <h2>Contact Me</h2>
+            <hr>
+            <div class="contact-details">
+                <p><i class="fa fa-map-marker"></i> California, US</p>
+                <p><i class="fa fa-phone"></i> Phone: +1 408-805-5731</p>
+                <p><i class="fa fa-envelope"></i> Email: lakshmiprasadgre1@gmail.com</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Lakshmi Prasad. All Rights Reserved.</p>
+    <p>Connect with me on <a href="https://www.linkedin.com/in/lakshmi-prasad-dinesh-b5b12b189/">LinkedIn</a></p>
+</footer>
+
+
+</body>
+</html>
